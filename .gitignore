@@ -1,4 +1,5 @@
 ### IDE Files ###
+.idea/dictionaries
 .idea
 *.iml
 .vscode
