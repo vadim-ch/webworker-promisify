@@ -1,0 +1,27 @@
+{
+  "name": "webworker-promisify",
+  "version": "0.0.2",
+  "typings": "./build/index.d.ts",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./build/* && tsc",
+    "prepublish": "npm run build",
+    "localpublish": "npm pack",
+    "precommit": "npm test",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vadim-ch/webworker-promisify.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vadim-ch/webworker-promisify/issues"
+  },
+  "homepage": "https://github.com/vadim-ch/webworker-promisify#readme",
+  "dependencies": {
+    "typescript": "^2.5.2"
+  }
+}

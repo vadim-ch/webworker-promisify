@@ -1,0 +1,20 @@
+### IDE Files ###
+.idea
+*.iml
+.vscode
+
+### src ###
+/src
+.gitignore
+preprocessor.js
+README.md
+sonatype.sbt
+tsconfig.json
+tslint.json
+!/build/
+
+### NPM files ###
+/node_modules
+package-lock.json
+react-virtual-scroll*.tgz
+npm-debug.log
