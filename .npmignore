@@ -16,5 +16,5 @@ tslint.json
 ### NPM files ###
 /node_modules
 package-lock.json
-react-virtual-scroll*.tgz
+webworker-promisify-*.tgz
 npm-debug.log

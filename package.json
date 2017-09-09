@@ -2,7 +2,8 @@
   "name": "webworker-promisify",
   "version": "0.0.2",
   "typings": "./build/index.d.ts",
-  "description": "",
+  "description": "Webworker Promisify",
+  "keywords": ["webworker", "promise", "thread"],
   "main": "./build/index.js",
   "scripts": {
     "build": "rm -rf ./build/* && tsc",
@@ -15,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/vadim-ch/webworker-promisify.git"
   },
-  "author": "",
+  "author": "vadim-ch",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vadim-ch/webworker-promisify/issues"
