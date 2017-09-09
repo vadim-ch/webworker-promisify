@@ -2,7 +2,7 @@ export function webworkerPromisify<T>(fn: Function): (data?: any) => Promise<T> 
   return (...data) => {
     const workerHandler = (fn) => {
       onmessage = (ev) => {
-        postMessage(fn(...ev.data), null);
+        postMessage(fn(...ev.data));
       };
     };
 
