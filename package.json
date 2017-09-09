@@ -21,7 +21,7 @@
     "url": "https://github.com/vadim-ch/webworker-promisify/issues"
   },
   "homepage": "https://github.com/vadim-ch/webworker-promisify#readme",
-  "dependencies": {
+  "devDependencies": {
     "typescript": "^2.5.2"
   }
 }
