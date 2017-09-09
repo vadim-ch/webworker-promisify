@@ -3,7 +3,11 @@
   "version": "0.0.2",
   "typings": "./build/index.d.ts",
   "description": "Webworker Promisify",
-  "keywords": ["webworker", "promise", "thread"],
+  "keywords": [
+    "webworker",
+    "promise",
+    "thread"
+  ],
   "main": "./build/index.js",
   "scripts": {
     "build": "rm -rf ./build/* && tsc",
@@ -22,7 +26,23 @@
     "url": "https://github.com/vadim-ch/webworker-promisify/issues"
   },
   "homepage": "https://github.com/vadim-ch/webworker-promisify#readme",
+  "jest": {
+    "transform": {
+      "^.+\\.ts?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  },
   "devDependencies": {
+    "@types/jest": "^20.0.8",
+    "jest": "^21.0.2",
+    "ts-jest": "^21.0.0",
     "typescript": "^2.5.2"
   }
 }
