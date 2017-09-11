@@ -1,19 +1,13 @@
 export function webworkerPromisify<T>(fn: Function): (data?: any) => Promise<T> {
   return (...data) => {
-    const workerHandler = (fn) => {
-      onmessage = (ev) => {
-        postMessage(fn(...ev.data));
-      };
-    };
-
-    const worker = new Worker(
-        URL.createObjectURL(
-            new Blob(['('+workerHandler+')('+fn+')'])
-        )
-    );
+    const blob = new Blob([`
+              var fn = ${fn};
+              var data = ${JSON.stringify(data)};
+              postMessage(fn(...data));
+              `]);
+    const worker = new Worker(URL.createObjectURL(blob));
 
     return new Promise((resolve, reject) => {
-      worker.postMessage(data);
       worker.onmessage = (ev: MessageEvent) => {
         worker.terminate();
         resolve(ev.data);
