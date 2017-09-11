@@ -6,12 +6,16 @@ webworker-promisify is wrapper over a Webworker that allows to execute a functio
 
 `npm install webworker-promisify`
 
+```js
+import { webworkerPromisify } from 'webworker-promisify';
+```
+
 ## Examples on TypeScript
 
 
 ### Promise
 
-```ts
+```js
 let sum = (a, b) => {
   return a + b;
 };
@@ -22,6 +26,21 @@ sum(1, 2).then((data) => {
 }).catch((err) => {
   console.error('err', err);
 });
+
+```
+
+```js
+const prepareData = data => {
+  return data.map(item => (item.prepared = true, item));
+};
+
+sendRequest(id) // returned Promise with large array
+  .then(data => {
+    return webworkerPromisify(prepareData)(data); // changed data in Worker
+  })
+  .then(preparedData => {
+    console.log('preparedData', preparedData); // returned preparedData
+  });
 
 ```
 
@@ -39,4 +58,13 @@ try {
 } catch (err) {
   console.error('err', err);
 }
+```
+
+```js
+const prepareData = data => {
+  return data.map(item => (item.prepared = true, item));
+};
+
+const data = await sendRequest(id); // returned Promise with large array
+const preparedData = await webworkerPromisify(prepareData)(data);
 ```
